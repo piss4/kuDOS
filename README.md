@@ -20,3 +20,9 @@ Scott - Developer
 YoPoster - Developer
 Scarf - Designer, Tester
 Official B - Tester
+
+# Community
+
+[Discord Server](https://discord.gg/HmXsjGttXw)
+
+[Discussion Board](https://github.com/piss4/kuDOS/discussions)
