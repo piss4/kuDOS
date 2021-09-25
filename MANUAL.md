@@ -19,3 +19,12 @@ Renames a file or directory.
 
 #### exit
 Aborts current kuDOS session.
+
+#### read
+Displays a file's contents.
+
+#### dir
+Displays all subdirectories and files in a directory.
+
+#### file
+Displays details about a file.
