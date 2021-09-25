@@ -7,6 +7,7 @@
 #include <signal.h>
 #include <ctype.h>
 #include <math.h>
+#include <dirent.h>
 
 
 
@@ -115,6 +116,57 @@ int main() {
     sleep (1);
     printf ("Thank you for choosing kuDOS");
     
+  } else if (strcmp(cmd, "file") == 0) {
+
+    printf ("\nEnter file name: \n");
+    char fname[255];
+    scanf("%s",&fname);
+    int size;
+    FILE *f = NULL;
+    f = fopen(fname, "r");
+    fseek(f, 0, SEEK_END);
+    size = ftell(f);
+    fseek(f, 0, SEEK_SET);
+    printf ("\nFile: %s\n", fname);
+    printf ("Size: %d Bytes", size);
+
+    goto command;
+
+  } else if (strcmp(cmd, "dir") == 0) {
+
+    printf ("\nListing all files in current directory... \n");
+    DIR *d;
+    struct dirent *dir;
+    d = opendir(".");
+    if (d) {
+        while ((dir = readdir(d)) != NULL) {
+            printf("%s\n", dir->d_name);
+        }
+        closedir(d);
+    }
+    goto command;
+
+  } else if (strcmp(cmd, "read") == 0) {
+
+    FILE *fptr;
+    char filename[100], c;
+    printf("Enter file name: \n");
+    scanf("%s", filename);
+    fptr = fopen(filename, "r");
+    if (fptr == NULL)
+    {
+        printf("Cannot open file \n");
+        exit(0);
+    }
+    c = fgetc(fptr);
+    while (c != EOF)
+    {
+        printf ("%c", c);
+        c = fgetc(fptr);
+    }
+    fclose(fptr);
+    goto command;
+
   } else {
     
     printf ("Command invalid.");
