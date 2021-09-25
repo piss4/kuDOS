@@ -71,7 +71,7 @@ int main() {
   	char fileToTouch[255];
   	scanf("%s",&fileToTouch);
     FILE *fp;
-    fp = fopen (fileToTouch, "W");
+    fp = fopen (fileToTouch, "a");
     fclose (fp);
     goto command;
     
