@@ -29,11 +29,11 @@ int main() {
   
   // startup
   
-	system("clear");
+  system("clear");
   sleep(1);
   printf ("kuDOS Ver 1.0 \n");
   sleep(2);
-	system("clear");
+  system("clear");
   
   // main
   
@@ -46,17 +46,17 @@ int main() {
   
   if (strcmp(cmd, "time") == 0) {
     
-		time_t currtime = time(NULL);
-		char * s_time = ctime(&currtime);
-		s_time[strlen(s_time)-1] = '/0';
-  	printf ("%s", s_time);
+    time_t currtime = time(NULL);
+    char * s_time = ctime(&currtime);
+    s_time[strlen(s_time)-1] = '/0';
+    printf ("%s", s_time);
     goto command;
     
   } else if (strcmp(cmd, "delete") == 0) {
     
-  	printf ("\nEnter file name: \n");
-  	char fileToDelete[255];
-  	scanf("%s",&fileToDelete);
+    printf ("\nEnter file name: \n");
+    char fileToDelete[255];
+    scanf("%s",&fileToDelete);
     int del_task = remove(fileToDelete);
     if (del_task == 0) {
       printf ("File deleted successfully.");
@@ -67,11 +67,11 @@ int main() {
     
   } else if (strcmp(cmd, "touch") == 0) {
     
-  	printf ("\nEnter file name: \n");
-  	char fileToTouch[255];
-  	scanf("%s",&fileToTouch);
+    printf ("\nEnter file name: \n");
+    char fileToTouch[255];
+    scanf("%s",&fileToTouch);
     FILE *fp;
-		fp = fopen (fileToTouch, "W");
+    fp = fopen (fileToTouch, "W");
     fclose (fp);
     goto command;
     
@@ -82,12 +82,12 @@ int main() {
     
   } else if (strcmp(cmd, "info") == 0) {
     
-  	printf ("kuDOS Version 1.0\n");
-  	printf ("Credits:\n");
-  	printf ("Scott: Developer\n");
-  	printf ("YoPoster: Developer\n");
-  	printf ("Scarf: Designer, Tester\n");
-  	printf ("Official B: Tester\n");
+    printf ("kuDOS Version 1.0\n");
+    printf ("Credits:\n");
+    printf ("Scott: Developer\n");
+    printf ("YoPoster: Developer\n");
+    printf ("Scarf: Designer, Tester\n");
+    printf ("Official B: Tester\n");
     goto command;
     
   } else if (strcmp(cmd, "rename") == 0) {
