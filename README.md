@@ -17,8 +17,11 @@ Clone this repository (using git) into whichever directory you desire. Open the 
 ### Staff Team:
 
 Scott - Developer
+
 YoPoster - Developer
+
 Scarf - Designer, Tester
+
 Official B - Tester
 
 # Community
