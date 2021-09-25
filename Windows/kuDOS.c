@@ -59,9 +59,9 @@ int main() {
   	scanf("%s",&fileToDelete);
     int del_task = remove(fileToDelete);
     if (del_task == 0) {
-      printf ("File deleted successfully.");
+    printf ("File deleted successfully.");
     } else {
-      printf ("File couldn't be deleted.");
+    printf ("File couldn't be deleted.");
     }
     goto command;
     
