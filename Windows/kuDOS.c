@@ -29,11 +29,11 @@ int main() {
   
   // startup
   
-  system("cls");
+  system("clear");
   sleep(1);
   printf ("kuDOS Ver 1.0 \n");
   sleep(2);
-  system("cls");
+  system("clear");
   
   // main
   
@@ -106,7 +106,7 @@ int main() {
     
   } else if (strcmp(cmd, "clear") == 0) {
     
-    system("cls");
+    system("clear");
     goto command;
     
   } else if (strcmp(cmd, "exit") == 0) {
