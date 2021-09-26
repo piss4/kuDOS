@@ -36,7 +36,7 @@ main ()
 
   system ("clear");
   sleep (1);
-  printf ("kuDOS Ver 1.0 \n");
+  printf ("kuDOS Ver 1.1 \n");
   sleep (2);
   system ("clear");
 
