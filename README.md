@@ -29,3 +29,7 @@ Official B - Tester
 [Discord Server](https://discord.gg/HmXsjGttXw)
 
 [Discussion Board](https://github.com/piss4/kuDOS/discussions)
+
+------
+
+[Manual](https://piss4.github.io/kuDOS/MANUAL) [Repository](https://github.com/piss4/kuDOS) [Discord Server](https://discord.gg/HmXsjGttXw) [Discussion Board](https://github.com/piss4/kuDOS/discussions)
