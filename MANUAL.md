@@ -28,3 +28,12 @@ Displays all subdirectories and files in a directory.
 
 #### file
 Displays details about a file.
+
+#### write
+Overrides a file's content with whichever content you wish.
+
+#### cd
+Navigates through directories. (Use ``..`` to go back.)
+
+#### mkdir
+Creates a directory.
