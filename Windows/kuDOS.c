@@ -8,6 +8,8 @@
 #include <ctype.h>
 #include <math.h>
 #include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 
 
@@ -90,14 +92,14 @@ command:
   else if (strcmp (cmd, "version") == 0)
     {
 
-      printf ("kuDOSB. 1.0");
+      printf ("kuDOSB. 1.1");
       goto command;
 
     }
   else if (strcmp (cmd, "info") == 0)
     {
 
-      printf ("kuDOS Version 1.0\n");
+      printf ("kuDOS Version 1.1\n");
       printf ("Credits:\n");
       printf ("Scott: Developer\n");
       printf ("YoPoster: Developer\n");
@@ -116,11 +118,11 @@ command:
       scanf ("%s", r2);
       if (rename (r1, r2) == 0)
 	{
-	  printf ("Successfully renamed file.");
+	  printf ("Successfully renamed file...");
 	}
       else
 	{
-	  printf ("Failed to rename file.");
+	  printf ("Failed to rename file...");
 	}
       goto command;
 
@@ -137,7 +139,7 @@ command:
 
       printf ("Aborting...\n");
       sleep (1);
-      printf ("Thank you for choosing kuDOS");
+      printf ("Thank you for choosing kuDOS!\n");
 
     }
   else if (strcmp (cmd, "file") == 0)
@@ -186,7 +188,7 @@ command:
       fptr = fopen (filename, "r");
       if (fptr == NULL)
 	{
-	  printf ("Cannot open file \n");
+	  printf ("Cannot open file... \n");
 	  exit (0);
 	}
       c = fgetc (fptr);
@@ -196,6 +198,46 @@ command:
 	  c = fgetc (fptr);
 	}
       fclose (fptr);
+      goto command;
+
+    }
+  else if (strcmp (cmd, "mkdir") == 0)
+    {
+
+      printf ("\nDirectory Name: \n");
+      char dirmake[200];
+      scanf ("%s", &dirmake);
+      int result = mkdir (dirmake, 0777);
+      goto command;
+
+    }
+  else if (strcmp (cmd, "cd") == 0)
+    {
+
+      printf ("\nPath: \n");
+      char dirpath[200];
+      scanf ("%s", &dirpath);
+      chdir (dirpath);
+      goto command;
+
+    }
+  else if (strcmp (cmd, "write") == 0)
+    {
+
+      printf ("File: \n");
+      char fileWrite[255];
+      scanf ("%s", fileWrite);
+      FILE *f = fopen (fileWrite, "w");
+      if (f == NULL)
+	{
+	  printf ("Couldn't open file... \n");
+	  goto command;
+	}
+      printf ("Content: \n");
+      const char *text;
+      scanf ("%s", text);
+      fprintf (f, "%s", text);
+      fclose (f);
       goto command;
 
     }
